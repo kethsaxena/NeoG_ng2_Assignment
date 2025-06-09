@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Currency Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Investment Planner</a></li>
+          <li><a href="currencyConverter.html">Currency Converter</a></li>
+          <li><a href="Discounts.html">Discounts Deducer</a></li>
+          <li><a href="BillBatwaara.html">Bill Batwaara</a></li>
+        </ul>
+      </nav>
+      </nav>
+      <hgroup>
+        <h1>Dollar Converter to Rupees</h1>
+        <p>USD to INR APP</p>
+      </hgroup>
+      <div>
+          <input id="usdAmount" placeholder="Enter Amount in USD"  type="number" required/>
+          <button id="convertButton" type="button">Convert To INR</button>
+      </div>
+    </header>
+    <main class="container">
+      <section>
+        <p id="result"></p>
+      </section>
+    </main>
+    <Script id="ng2_cc">
+      const CalcBtn_InputElement = document.getElementById("convertButton");
+      function calculateConversion(){
+        const resultElement = document.getElementById("result");
+        const usdInputElement = document.getElementById("usdAmount");
+        const USDValue = usdInputElement.value;
+       
+        const INRValue = USDValue *86;
+        resultElement.innerText = "USD Value: "+USDValue+" Equals INR: "+INRValue.toFixed(2);
+      }
+     
+      CalcBtn_InputElement.addEventListener("click",calculateConversion)
+    </Script>
+  </body>
+</html>

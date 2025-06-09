@@ -15,10 +15,10 @@
       <nav>
         <ul>
           <li><a href="index.html">Investment Planner</a></li>
-          <li><a href="cc.html">Currency Converter</a></li>
+          <li><a href="currencyConverter.html">Currency Converter</a></li>
           <li><a href="Discounts.html">Discounts Deducer</a></li>
-          <li><a href="BillBatwaara.html">Discounts Deducer</a></li>
-        </ul>|
+          <li><a href="BillBatwaara.html">Bill Batwaara</a></li>
+        </ul>
       </nav>
       </nav>
       <hgroup>
@@ -27,12 +27,29 @@
       </hgroup>
     </header>
     <main class="container">
-      <section>
-        <p>Batwaa Bill App Will come here</p>
-      </section>
+      <div style="display: flex; gap: 30px; align-items: center">
+        <input id="Amt" type="text" placeholder="Enter Total Amount"  style="width: 250px;">
+        <input id="People" type="text" placeholder="Enter # of People" style="width: 350px;">
+        <button id="Btn">Submit</button>
+      </div>
       <section>
         <p id="result"></p>
       </section>
-    </main>
+      <script>
+        const btn = document.getElementById("Btn");
+        function getInfoDiscount(){
+          const Amount = document.getElementById("Amt").value;
+          const People = document.getElementById("People").value;
+          const result = document.getElementById("result");
+
+          console.log("Getting Discount for:"+Amount);
+          console.log("Discount Percentage:"+People);
+
+          const perPerson = Amount/People;
+          result.innerText = "Each Person Pays INR: "+perPerson
+        };
+
+        btn.addEventListener("click",getInfoDiscount);
+      </script>
   </body>
 </html>
